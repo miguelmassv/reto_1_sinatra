@@ -1,10 +1,12 @@
 require 'sinatra'
 
 get '/' do
-    unless params[:nombre]
+    if params[:nombre] == ""
         "Hola desconocido!."
-    else
+    elsif params[:nombre]
         "hola #{params[:nombre]}!"
+    else
+        "Hola desconocido!."
     end
 end
 
