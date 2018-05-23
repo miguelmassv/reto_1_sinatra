@@ -1,13 +1,11 @@
 require 'sinatra'
 
 get '/' do
-    if params[:nombre] == ""
-        "Hola desconocido!."
-    elsif params[:nombre]
-        "hola #{params[:nombre]}!"
+    if (params[:nombre]==nil || params[:nombre]=={} || params[:nombre]=="")
+      "Hola desconocido!"
     else
-        "Hola desconocido!."
+      "<h1>Hola #{params[:nombre]}!</h1>"
     end
-end
+  end
 
 # http://localhost:4567/?nombre=miguel
