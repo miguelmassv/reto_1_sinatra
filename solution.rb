@@ -1,8 +1,6 @@
 require 'sinatra'
-get '/' do
-  erb :index
-end
 
-post '/saludar' do
-  "Hola #{params[:nombre]}!"
+get '/' do
+  @number = params[:number]
+  erb :index
 end
