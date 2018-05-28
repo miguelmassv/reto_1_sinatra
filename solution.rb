@@ -1,7 +1,6 @@
 require 'sinatra'
-
+require 'net/http'
 
 get '/' do
-    @navegador= request.user_agent
-    "#{@navegador}"
+	env['HTTP_PERMISO']=='soy-un-token-secreto' ?  "Si lo logramos!" :  "Sin Permiso"
 end
